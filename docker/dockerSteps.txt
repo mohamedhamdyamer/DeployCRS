@@ -2,6 +2,18 @@ MySQL Image:
 ------------
 docker run --name deployCRS -e MYSQL_ROOT_PASSWORD=root123 -d mysql:latest
 
+docker container ls
+
 docker inspect deployCRS -f "{{json .NetworkSettings.Networks }}"
 
 docker run -it --rm mysql mysql -h 172.17.0.2 -uroot -proot123
+
+use mysql;
+
+Create Table Items (ProjectID varchar(3), Sequence int, Item varchar(30));
+
+Insert into Items (ProjectID, Sequence, Item) Values ("001", 1, "VPC");
+Insert into Items (ProjectID, Sequence, Item) Values ("001", 2, "DataDomain");
+Insert into Items (ProjectID, Sequence, Item) Values ("001", 3, "CRM");
+Insert into Items (ProjectID, Sequence, Item) Values ("001", 4, "CyberSense");
+Insert into Items (ProjectID, Sequence, Item) Values ("001", 5, "Test");
