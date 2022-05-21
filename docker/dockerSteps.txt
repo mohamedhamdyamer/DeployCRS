@@ -5,6 +5,8 @@ docker container ls
 MySQL Image:
 ------------
 docker run --name deployCRS -e MYSQL_ROOT_PASSWORD=root123 -d mysql:latest
+"or"
+docker container start deployCRS
 
 docker container ls
 
