@@ -13,3 +13,7 @@ docker container ls
 docker inspect deployCRS -f "{{json .NetworkSettings.Networks }}"
 
 docker run -it --rm mysql mysql -h 172.17.0.2 -uroot -proot123
+
+docker run -d -t busybox
+
+docker exec -it <container_id> sh
